@@ -8,7 +8,7 @@ from sklearn.preprocessing import StandardScaler
 try:
     from src.Lab2_5_LogisticRegression_and_regularization import LogisticRegressor
 except ImportError:
-    from Lab2_5_LogisticRegression_and_regularization import LogisticRegressor
+    from src.Lab2_5_LogisticRegression_and_regularization import LogisticRegressor
 
 
 @pytest.fixture
@@ -183,6 +183,6 @@ def test_maximum_likelihood():
     y_true = np.array([0, 1, 1, 0])
     y_pred = np.array([0.1, 0.9, 0.8, 0.2])
 
-    loss = LogisticRegressor.maximum_likelihood(y_true, y_pred)
+    loss = LogisticRegressor.log_likelihood(y_true, y_pred)
     assert isinstance(loss, float)
     assert loss >= 0
